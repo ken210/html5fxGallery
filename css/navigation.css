@@ -94,20 +94,35 @@ li a {
 	
 }
 
-.multiplebgs #btn1 { background-position: left top, left top; }
-.multiplebgs #btn1:hover { background-position: left -60px, left bottom; }
+#btn1 { background-position: left top, left top; }
+#btn1:hover { background-position: left -60px, left bottom; }
 
-.multiplebgs #btn2 { background-position: -100px top, left top; }
-.multiplebgs #btn2:hover { background-position: -100px -60px, left bottom; }
+#btn2 { background-position: -100px top, left top; }
+#btn2:hover { background-position: -100px -60px, left bottom; }
 
-.multiplebgs #btn3 { background-position: -200px top, left top; }
-.multiplebgs #btn3:hover { background-position: -200px -60px, left bottom; }
+#btn3 { background-position: -200px top, left top; }
+#btn3:hover { background-position: -200px -60px, left bottom; }
 
-.multiplebgs #btn4 { background-position: -300px top, left top; }
-.multiplebgs #btn4:hover { background-position: -300px -60px, left bottom; }
+#btn4 { background-position: -300px top, left top; }
+#btn4:hover { background-position: -300px -60px, left bottom; }
 
-.multiplebgs #btn5 { background-position: -400px top, left top; }
-.multiplebgs #btn5:hover { background-position: -400px -60px, left bottom; }
+#btn5 { background-position: -400px top, left top; }
+#btn5:hover { background-position: -400px -60px, left bottom; }
+
+.no-multiplebgs #btn1 { background-position: left top; }
+.no-multiplebgs #btn1:hover { background-position: left -60px; background-color: #000; }
+
+.no-multiplebgs #btn2 { background-position: -100px top; }
+.no-multiplebgs #btn2:hover { background-position: -100px -60px; background-color: #000; }
+
+.no-multiplebgs #btn3 { background-position: -200px top; }
+.no-multiplebgs #btn3:hover { background-position: -200px -60px; background-color: #000; }
+
+.no-multiplebgs #btn4 { background-position: -300px top; }
+.no-multiplebgs #btn4:hover { background-position: -300px -60px; background-color: #000; }
+
+.no-multiplebgs #btn5 { background-position: -400px top; }
+.no-multiplebgs #btn5:hover { background-position: -400px -60px; background-color: #000; }
 
 /* highlight style */
 
