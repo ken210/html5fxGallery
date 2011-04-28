@@ -1,0 +1,152 @@
+.horizontalMenu li:first-child,
+.horizontalMenu li.first-child {
+	text-indent:0;
+}
+
+.horizontalMenu li {
+	display:inline-block;
+	text-indent:-4px;
+}
+
+li a {
+	text-decoration:none;
+}
+
+/* odometer style */
+
+#bt1, #bt2, #bt3, #bt4, #bt5 {
+	background-image: url("img/sprite-cssTransitions.png");
+	display:block;
+	width:100px;
+	height:30px;
+}
+
+.csstransitions #bt1,
+.csstransitions #bt2,
+.csstransitions #bt3,
+.csstransitions #bt4,
+.csstransitions #bt5 {
+	
+	-webkit-transition-property: background-position;
+	-webkit-transition-duration: 0.3s;
+	-webkit-timing-function: ease-out;
+
+	-moz-transition-property: background-position;
+	-moz-transition-duration: 0.3s;
+	-moz-timing-function: ease-out;
+
+	-o-transition-property: background-position;
+	-o-transition-duration: 0.3s;
+	-o-timing-function: ease-out;
+	
+}
+
+#bt1 { background-position:left top; }
+#bt1:hover { background-position:left -30px; }
+
+#bt2 { background-position:-100px top; }
+#bt2:hover { background-position:-100px -30px; }
+
+#bt3 { background-position:-200px top; }
+#bt3:hover { background-position:-200px -30px; }
+
+#bt4 { background-position:-300px top; }
+#bt4:hover { background-position:-300px -30px; }
+
+#bt5 { background-position:-400px top; }
+#bt5:hover { background-position:-400px -30px; }
+
+/* bottom fill style */
+
+#btn1, #btn2, #btn3, #btn4, #btn5 {
+	background-image: url("img/sprite-cssTransitions.png");
+	display:block;
+	width:100px;
+	height:30px;
+}
+
+.multiplebgs #btn1,
+.multiplebgs #btn2,
+.multiplebgs #btn3,
+.multiplebgs #btn4,
+.multiplebgs #btn5 {
+	background-image: url("img/sprite-cssTransitions.png"),
+						url("img/blackBg.png");
+}
+
+.csstransitions #btn1,
+.csstransitions #btn2,
+.csstransitions #btn3,
+.csstransitions #btn4,
+.csstransitions #btn5 {
+	
+	-webkit-transition-property: background-position, background-position;
+	-webkit-transition-duration: 1s, 0.3s;
+	-webkit-timing-function: ease-in, ease-out;
+
+	-moz-transition-property: background-position, background-position;
+	-moz-transition-duration: 1s, 0.3s;
+	-moz-timing-function: ease-in, ease-out;
+
+	-o-transition-property: background-position, background-position;
+	-o-transition-duration: 1s, 0.3s;
+	-o-timing-function: ease-in, ease-out;
+	
+}
+
+.multiplebgs #btn1 { background-position: left top, left top; }
+.multiplebgs #btn1:hover { background-position: left -60px, left bottom; }
+
+.multiplebgs #btn2 { background-position: -100px top, left top; }
+.multiplebgs #btn2:hover { background-position: -100px -60px, left bottom; }
+
+.multiplebgs #btn3 { background-position: -200px top, left top; }
+.multiplebgs #btn3:hover { background-position: -200px -60px, left bottom; }
+
+.multiplebgs #btn4 { background-position: -300px top, left top; }
+.multiplebgs #btn4:hover { background-position: -300px -60px, left bottom; }
+
+.multiplebgs #btn5 { background-position: -400px top, left top; }
+.multiplebgs #btn5:hover { background-position: -400px -60px, left bottom; }
+
+/* highlight style */
+
+#butn1, #butn2, #butn3, #butn4, #butn5 {
+	background-image: url("img/sprite-cssTransitions.png");
+	background-color: transparent;
+	display:block;
+	width:100px;
+	height:30px;
+}
+
+.csstransitions #butn1,
+.csstransitions #butn2,
+.csstransitions #butn3,
+.csstransitions #butn4,
+.csstransitions #butn5 {
+	
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 0.3s;
+	-webkit-timing-function: ease-out;
+
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 0.3s;
+	-moz-timing-function: ease-out;
+
+	-o-transition-property: background-color;
+	-o-transition-duration: 0.3s;
+	-o-timing-function: ease-out;
+	
+}
+
+#butn1 { background-position:left top; }
+
+#butn2 { background-position:-100px top; }
+
+#butn3 { background-position:-200px top; }
+
+#butn4 { background-position:-300px top; }
+
+#butn5 { background-position:-400px top; }
+
+#butn1:hover, #butn2:hover, #butn3:hover, #butn4:hover, #butn5:hover { background-color:#fff }
