@@ -1,25 +1,33 @@
-.horizontalMenu li:first-child,
-.horizontalMenu li.first-child {
-	text-indent:0;
-}
+/* my pattern to make horizontal menus */
 
-.horizontalMenu li {
-	display:inline-block;
-	text-indent:-4px;
-}
+.horizontalMenu ul { font-size:0; overflow:auto; }
 
-li a {
+.horizontalMenu ul, .horizontalMenu li { display:inline-block; }
+
+.ie7 .horizontalMenu ul,
+.ie7 .horizontalMenu li { display:block; float:left; }
+
+.ie7 nav.horizontalMenu { overflow:auto; display:block; }
+
+.horizontalMenu a {
+	display:block;
 	text-decoration:none;
 }
 
-/* odometer style */
 
-#bt1, #bt2, #bt3, #bt4, #bt5 {
-	background-image: url("img/sprite-cssTransitions.png");
-	display:block;
+/* this applies to all menus on this example */
+
+.horizontalMenu a {
 	width:100px;
 	height:30px;
+	background-color: transparent;
 }
+
+
+
+/* odometer style */
+
+#bt1, #bt2, #bt3, #bt4, #bt5 { background-image: url("img/sprite-cssTransitions.png"); }
 
 .csstransitions #bt1,
 .csstransitions #bt2,
@@ -58,20 +66,14 @@ li a {
 
 /* bottom fill style */
 
-#btn1, #btn2, #btn3, #btn4, #btn5 {
-	background-image: url("img/sprite-cssTransitions.png");
-	display:block;
-	width:100px;
-	height:30px;
-}
+#btn1, #btn2, #btn3, #btn4, #btn5 { background-image: url("img/sprite-cssTransitions.png"); }
 
 .multiplebgs #btn1,
 .multiplebgs #btn2,
 .multiplebgs #btn3,
 .multiplebgs #btn4,
 .multiplebgs #btn5 {
-	background-image: url("img/sprite-cssTransitions.png"),
-						url("img/blackBg.png");
+	background-image: url("img/sprite-cssTransitions.png"), url("img/blackBg.png");
 }
 
 .csstransitions #btn1,
@@ -124,15 +126,10 @@ li a {
 .no-multiplebgs #btn5 { background-position: -400px top; }
 .no-multiplebgs #btn5:hover { background-position: -400px -60px; background-color: #000; }
 
+
 /* highlight style */
 
-#butn1, #butn2, #butn3, #butn4, #butn5 {
-	background-image: url("img/sprite-cssTransitions.png");
-	background-color: transparent;
-	display:block;
-	width:100px;
-	height:30px;
-}
+#butn1, #butn2, #butn3, #butn4, #butn5 { background-image: url("img/sprite-cssTransitions.png"); }
 
 .csstransitions #butn1,
 .csstransitions #butn2,
@@ -165,3 +162,37 @@ li a {
 #butn5 { background-position:-400px top; }
 
 #butn1:hover, #butn2:hover, #butn3:hover, #butn4:hover, #butn5:hover { background-color:#fff }
+
+
+/* frame by frame  */
+
+#button1, #button2, #button3, #button4, #button5 { background-image: url("img/sprite-frameByFrame.png"); }
+
+#button1 { background-position: left top; }
+
+#button2 { background-position: -100px top; }
+
+#button3 { background-position: -200px top; }
+
+#button4 { background-position: -300px top; }
+
+#button5 { background-position: -400px top; }
+
+@-webkit-keyframes "b1_hover" {
+	
+	0% { background-position: left -30px; }
+	20% { background-position: left -60px; }
+	40% { background-position: left -90px; }
+	60% { background-position: left -120px; }
+	80% { background-position: left -150px; }
+	100% { background-position: left -180px; }
+	
+}
+
+#button1:hover {
+
+	-webkit-animation-name: "b1_hover";
+	-webkit-animation-duration: 10s;
+	-webkit-animation-iteration-count: 10;
+
+}
