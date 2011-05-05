@@ -1,5 +1,5 @@
 $(function(){
 	
-	$('.frameByFrame a').spriteFrames();
+	$('ul.frameByFrame').find('a.hover').spriteFrames('hover');
 	
-});
+});

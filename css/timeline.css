@@ -1,0 +1,18 @@
+#timeline {
+	width:600px;
+	height:400px;
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+
+#timeline,
+#timeline.frame1 { background-color:#ddd; }
+
+#timeline.frame2 { background-color:#bbb; }
+
+#timeline.frame3 { background-color:#999; }
+
+#timeline.frame4 { background-color:#777; }
+
+#timeline.frame5 { background-color:#555; }
