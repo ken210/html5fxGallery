@@ -62,7 +62,6 @@ $.fn.spriteFrames = function(options) {
 					
 				}
 				
-				
 			},
 			
 			play = function() {
