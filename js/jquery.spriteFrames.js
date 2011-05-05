@@ -35,25 +35,25 @@ $.fn.spriteFrames = function(options) {
 			
 			cssClass = '',
 			
-			setClass = function() {
-				
-				cssClass = elemClasses + ' ' + animEvent + currentFrame;
+			setClass = function(options) {
 				
 				$(element).removeClass();
-				$(element).addClass(cssClass);
+				$(element).addClass(options);
 				
 			},
 			
 			enterFrame = function () {
 				
+				var classToSet = elemClasses + ' ' + animEvent + currentFrame;
+				
 				if (ascending && currentFrame < totalFrames) {
 	
-					setClass();
+					setClass(classToSet);
 					currentFrame++;
 	
 				} else if (!ascending && currentFrame > 1) {
 					
-					setClass();
+					setClass(classToSet);
 					currentFrame--;
 					
 				} else {
@@ -74,8 +74,7 @@ $.fn.spriteFrames = function(options) {
 			stop = function() {
 				
 				clearInterval(interval);
-				$(element).removeClass();
-				$(element).addClass(elemClasses);
+				setClass(elemClasses);
 				
 			},
 			
