@@ -6,10 +6,26 @@
  * emulate a timeline based animation using css classes
  * 
  */
+ 
 
 (function($){ // non-conflict mode
 	
 $.fn.spriteFrames = function(options) {
+	
+	var defaults = {
+
+		fps : 40,
+		
+		// default to hover animation
+		animEvent : 'hover',
+		
+		// callback function defaults to none
+		complete : undefined
+		
+	};
+	
+	// merge defaults with options
+	$.extend(defaults, options);
 	
 	return this.each(function() {
 		
@@ -17,11 +33,6 @@ $.fn.spriteFrames = function(options) {
 		
 			// backup element classes
 			elemClasses = this.className,
-		
-			// default to hover animation
-			animEvent = options || 'hover',
-		
-			fps = 40,
 		
 			interval,
 			
@@ -42,9 +53,9 @@ $.fn.spriteFrames = function(options) {
 				
 			},
 			
-			enterFrame = function () {
+			enterFrame = function (skip) {
 				
-				var classToSet = elemClasses + ' ' + animEvent + currentFrame;
+				var classToSet = elemClasses + ' ' + defaults.animEvent + currentFrame;
 				
 				if (ascending && currentFrame < totalFrames) {
 	
@@ -58,30 +69,34 @@ $.fn.spriteFrames = function(options) {
 					
 				} else {
 					
-					stop();
+					stop(skip);
 					
 				}
 				
 			},
 			
-			play = function() {
+			play = function(skip) {
 				
-				interval = setInterval(enterFrame, 1000 / fps);
+				interval = setInterval(enterFrame, 1000 / defaults.fps, skip);
 	
 			},
 			
-			stop = function() {
+			stop = function(skip) {
 				
 				clearInterval(interval);
 				setClass(elemClasses);
 				
+				// callback function
+				if ($.isFunction(defaults.complete) && skip)
+					defaults.complete.call(this);
+					
 			},
 			
-			forward = function() {
+			forward = function(event) {
 				
 				stop();
 				ascending = true;
-				play();
+				play(event.data.skip);
 				
 			},
 
@@ -95,14 +110,15 @@ $.fn.spriteFrames = function(options) {
 			
 			init = (function() {
 				
-				if (animEvent == 'hover') {
+				if (defaults.animEvent == 'hover') {
 				
-					$(element).bind('mouseover', forward);
+					// $(element).bind('mouseover', forward);
+					$(element).bind('mouseover', {skip: true}, forward);
 					$(element).bind('mouseout', backward);
 					
 				} else {
 					
-					$(element).bind(animEvent, backward);
+					$(element).bind(defaults.animEvent, forward);
 					
 				}
 				
@@ -111,6 +127,5 @@ $.fn.spriteFrames = function(options) {
 	});
 	
 };
-	
 	
 })(jQuery);
